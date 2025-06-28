@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DesignLAB - Inicio</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- LightGallery  -->
+  <link href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/css/lightgallery-bundle.min.css" rel="stylesheet">
+
+  <!-- Estilos personalizados -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header>
+    <h1>DesignLAB</h1>
+    <p>Explorá el mundo de la impresión 3D</p>
+  </header>
+
+  <nav class="sticky-nav" aria-label="Navegación principal">
+    <ul class="nav justify-content-center">
+      <li class="nav-item">
+        <a class="nav-link active" href="index.html" aria-current="page" tabindex="0">Inicio</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="pages/contenidos.html" tabindex="0">Contenidos</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="pages/actividades.html" tabindex="0">Actividades</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="pages/contacto.html" tabindex="0">Contacto</a>
+      </li>
+    </ul>
+  </nav>
+
+  <main class="container py-4">
+    <section class="mb-5 text-center index-card">
+      <h2>Bienvenido a DesignLAB</h2>
+      <p>Aprendé diseño, impresión y prototipado en 3D con recursos interactivos y descargables.</p>
+      <img src="img/impresora3d.png" alt="Impresora 3D" class="img-impresion-3d">
+    </section>
+
+
+    <section class="mt-5 index-card">
+      <h2>Sobre Nosotros</h2>
+      <p>
+        En DesignLAB, nuestro objetivo es acercar la tecnología de impresión 3D
+        a estudiantes, docentes y entusiastas, facilitando el aprendizaje con recursos
+        prácticos y actualizados.
+      </p>
+      <ul>
+        <li>Accesibilidad y aprendizaje para todos</li>
+        <li>Innovación y actualización constante</li>
+        <li>Colaboración y comunidad</li>
+        <li>Compromiso con la calidad educativa</li>
+      </ul>
+      <p>
+        Si querés saber más o colaborar, no dudes en escribirnos.
+        <br>
+        <a href="pages/contacto.html" class="btn btn-lg btn-primary mt-3 contacto-btn">
+          Contacto
+        </a>
+      </p>
+    </section>
+      
+    
+  </main>
+
+  <footer>
+  <p>&copy; 2025 DesignLAB. Todos los derechos reservados.</p>
+  <div class="mt-2">
+    <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram" class="footer-social-link">
+      <img src="img/insta.png" alt="Instagram" width="28" height="28" class="footer-social-icon">
+    </a>
+    <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook" class="footer-social-link">
+      <img src="img/facebook.png" alt="Facebook" width="28" height="28" class="footer-social-icon">
+    </a>
+    <a href="https://www.youtube.com/" target="_blank" rel="noopener" aria-label="YouTube" class="footer-social-link">
+      <img src="img/youtube.png" alt="YouTube" width="28" height="28" class="footer-social-icon">
+    </a>
+    <a href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn" class="footer-social-link">
+      <img src="img/linkedin.png" alt="YouTube" width="28" height="28" class="footer-social-icon">
+    </a>
+  </div>
+</footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/lightgallery.min.js"></script>
+  <script src="js/script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Interactividad: resalta el menú activo
+      document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', function() {
+          document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+          this.classList.add('active');
+        });
+      });
+        // Inicializar LightGallery 
+        const gallery = document.querySelector('.lightgallery');
+        if (gallery) {
+          lightGallery(gallery, {
+            selector: '.light-item',
+            plugins: [lgZoom, lgThumbnail],
+            speed: 500,
+            thumbnail: true,
+            zoom: true
+          });
+        }   
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contacto - DesignLAB</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Estilos personalizados -->
+  <link rel="stylesheet" href="/css/styles.css" />
+
+  <!-- Script de validación -->
+  <script>
+    function validarFormulario() {
+      const nombre = document.getElementById('nombre').value;
+      const email = document.getElementById('email').value;
+      const mensaje = document.getElementById('mensaje').value;
+
+      if (!nombre || !email || !mensaje) {
+        alert('Por favor, completa todos los campos.');
+        return false;
+      }
+
+      if (!email.includes('@')) {
+        alert('Por favor, ingresa un email válido.');
+        return false;
+      }
+
+      alert('Formulario enviado correctamente.');
+      return true;
+    }
+  </script>
+</head>
+<body>
+
+  <header>
+    <h1>Contacto</h1>
+    <p>Escribinos para más información o dudas</p>
+  </header>
+
+  <nav class="sticky-nav" aria-label="Navegación principal">
+    <ul class="nav justify-content-center">
+      <li class="nav-item"><a class="nav-link" href="/index.html">Inicio</a></li>
+      <li class="nav-item"><a class="nav-link" href="contenidos.html">Contenidos</a></li>
+      <li class="nav-item"><a class="nav-link" href="actividades.html">Actividades</a></li>
+      <li class="nav-item"><a class="nav-link active" href="contacto.html" aria-current="page">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <main class="container py-4">
+    <section>
+      <form id="contactForm" onsubmit="return validarFormulario()">
+        <div class="mb-3">
+          <label for="nombre" class="form-label">Nombre:</label>
+          <input type="text" class="form-control" id="nombre" name="nombre" required />
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email:</label>
+          <input type="email" class="form-control" id="email" name="email" required />
+        </div>
+        <div class="mb-3">
+          <label for="mensaje" class="form-label">Mensaje:</label>
+          <textarea class="form-control" id="mensaje" name="mensaje" rows="4" required></textarea>
+        </div>
+        <button type="submit" class="btn">Enviar</button>
+      </form>
+    </section>
+    <section id="info-contacto" class="mt-5"></section>
+  </main>
+
+ <footer>
+  <p>&copy; 2025 DesignLAB. Todos los derechos reservados.</p>
+  <div class="mt-2">
+    <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram" class="footer-social-link">
+      <img src="/img/insta.png" alt="Instagram" width="28" height="28" class="footer-social-icon">
+    </a>
+    <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook" class="footer-social-link">
+      <img src="/img/facebook.png" alt="Facebook" width="28" height="28" class="footer-social-icon">
+    </a>
+    <a href="https://www.youtube.com/" target="_blank" rel="noopener" aria-label="YouTube" class="footer-social-link">
+      <img src="/img/youtube.png" alt="YouTube" width="28" height="28" class="footer-social-icon">
+    </a>
+    <a href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn" class="footer-social-link">
+      <img src="/img/linkedin.png" alt="YouTube" width="28" height="28" class="footer-social-icon">
+    </a>
+  </div>
+</footer>
+
+
+  <script>
+    // Cargar mapa de ubicación al cargar la página
+    document.addEventListener('DOMContentLoaded', function() {
+      const info = document.getElementById('info-contacto');
+      info.innerHTML = `
+        <div class="card h-100 shadow-sm contenidos-card mapa-card">
+         <div class="card-body">
+            <h5 class="card-title">Mapa del sitio</h5>
+            <p>Av. Gral. Rivera 2967, Montevideo, Uruguay</p>
+            <div style="width:100%;height:250px;">
+              <iframe 
+                src="https://www.openstreetmap.org/export/embed.html?bbox=-56.164532661437996%2C-34.901112%2C-56.160532661437996%2C-34.899112&amp;layer=mapnik&amp;marker=-34.900112%2C-56.162532661438"
+                style="border:1px solid #ccc;width:100%;height:100%;border-radius:12px;"
+                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                title="Mapa de ubicación"></iframe>
+            </div>
+          </div>
+        </div>
+      `;
+    });
+  </script>
+</body>
+</html>

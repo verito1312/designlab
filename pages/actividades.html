@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Actividades - DesignLAB</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Estilos personalizados -->
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+
+  <header>
+    <h1>Actividades</h1>
+    <p>Probá tus conocimientos sobre impresión 3D</p>
+  </header>
+
+  <nav class="sticky-nav" aria-label="Navegación principal">
+    <ul class="nav justify-content-center">
+      <li class="nav-item"><a class="nav-link" href="/index.html">Inicio</a></li>
+      <li class="nav-item"><a class="nav-link" href="contenidos.html">Contenidos</a></li>
+      <li class="nav-item"><a class="nav-link active" href="actividades.html" aria-current="page">Actividades</a></li>
+      <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <main class="container py-4">
+    <!-- Quiz de selección múltiple -->
+    <section>
+      <div class="card mb-4">
+        <div class="card-body">
+          <h2 class="h5 mb-3">Quiz: Conceptos básicos de impresión 3D</h2>
+          <form id="quizForm">
+            <div class="mb-3">
+              <label class="form-label">1. ¿Qué material es más común en la impresión 3D doméstica?</label>
+              <div>
+                <input type="radio" name="q1" value="PLA" id="q1a" required>
+                <label for="q1a">PLA</label>
+              </div>
+              <div>
+                <input type="radio" name="q1" value="Madera" id="q1b">
+                <label for="q1b">Madera</label>
+              </div>
+              <div>
+                <input type="radio" name="q1" value="Vidrio" id="q1c">
+                <label for="q1c">Vidrio</label>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">2. ¿Qué programa se usa para preparar el modelo antes de imprimir?</label>
+              <div>
+                <input type="radio" name="q2" value="Slicer" id="q2a" required>
+                <label for="q2a">Slicer</label>
+              </div>
+              <div>
+                <input type="radio" name="q2" value="Word" id="q2b">
+                <label for="q2b">Word</label>
+              </div>
+              <div>
+                <input type="radio" name="q2" value="Excel" id="q2c">
+                <label for="q2c">Excel</label>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">3. ¿Cuál es el formato de archivo más usado para impresión 3D?</label>
+              <div>
+                <input type="radio" name="q3" value="STL" id="q3a" required>
+                <label for="q3a">STL</label>
+              </div>
+              <div>
+                <input type="radio" name="q3" value="PDF" id="q3b">
+                <label for="q3b">PDF</label>
+              </div>
+              <div>
+                <input type="radio" name="q3" value="JPG" id="q3c">
+                <label for="q3c">JPG</label>
+              </div>
+            </div>
+            <button type="submit" class="btn">Enviar respuestas</button>
+          </form>
+          <div id="quizResult" class="mt-3"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Actividad: Arrastrar y soltar -->
+    <section>
+      <div class="card mb-4">
+        <div class="card-body">
+          <h2 class="h5 mb-3">Actividad: Arrastrá el material al tipo de impresora correcto</h2>
+          <div class="row">
+            <div class="col-12 col-md-6 mb-3">
+              <div class="p-2 border rounded bg-light mb-2 draggable-material" id="material-pla" draggable="true">PLA</div>
+              <div class="p-2 border rounded bg-light mb-2 draggable-material" id="material-resina" draggable="true">Resina</div>
+            </div>
+            <div class="col-12 col-md-6">
+              <div class="p-2 border rounded mb-2" id="impresora-fdm" ondragover="event.preventDefault()" ondrop="dropMaterial(event, 'PLA')">
+                <strong>Impresora FDM</strong>
+                <div id="fdm-drop" class="mt-2"></div>
+              </div>
+              <div class="p-2 border rounded mb-2" id="impresora-sla" ondragover="event.preventDefault()" ondrop="dropMaterial(event, 'Resina')">
+                <strong>Impresora SLA</strong>
+                <div id="sla-drop" class="mt-2"></div>
+              </div>
+            </div>
+          </div>
+          <div id="dragResult" class="mt-3"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Actividad: Verdadero o falso -->
+    <section>
+      <div class="card mb-4">
+        <div class="card-body">
+          <h2 class="h5 mb-3">Verdadero o Falso</h2>
+          <form id="vfForm">
+            <div class="mb-3">
+              <label class="form-label" for="vf1-select">1. El PLA es biodegradable.</label>
+              <select class="form-select" name="vf1" id="vf1-select" required>
+                <option value="">Selecciona</option>
+                <option value="verdadero">Verdadero</option>
+                <option value="falso">Falso</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="vf2-select">2. Todas las impresoras 3D usan resina.</label>
+              <select class="form-select" name="vf2" id="vf2-select" required>
+                <option value="">Selecciona</option>
+                <option value="verdadero">Verdadero</option>
+                <option value="falso">Falso</option>
+              </select>
+            </div>
+            <button type="submit" class="btn">Comprobar</button>
+          </form>
+          <div id="vfResult" class="mt-3"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reto: ¿Qué objeto imprimirías? -->
+    <section>
+      <div class="card mb-4">
+        <div class="card-body">
+          <h2 class="h5 mb-3">Reto: ¿Qué objeto imprimirías?</h2>
+          <p>Describe un objeto útil que te gustaría imprimir en 3D y explica por qué.</p>
+          <textarea class="form-control mb-2" rows="3" placeholder="Escribe tu idea aquí..."></textarea>
+          <button class="btn" onclick="alert('¡Gracias por compartir tu idea!')">Enviar idea</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Prototipa tu idea en Tinkercad -->
+    <section>
+      <div class="card mb-4 text-center">
+        <div class="card-body">
+          <h2 class="h5 mb-3">¡Prototipá tu idea en 3D!</h2>
+          <p>Usá la plataforma gratuita Tinkercad para crear y experimentar con tus propios diseños 3D.</p>
+          <a href="https://www.tinkercad.com/" target="_blank" rel="noopener" class="btn btn-lg btn-primary tinkercad-btn">
+            Ingresa y prototipa tu idea
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Juego: Seguridad en impresoras 3D -->
+    <section>
+      <div class="card mb-4 text-center">
+        <div class="card-body">
+          <h2 class="h5 mb-3">Juego: Seguridad en impresoras 3D</h2>
+          <p>¡Poné a prueba tus conocimientos sobre seguridad completando los espacios en este juego interactivo!</p>
+          <a href="https://es.educaplay.com/recursos-educativos/21538628-completa_los_espacios_sobre_seguridad_en_impresoras_3d.html"
+             target="_blank" rel="noopener"
+             class="btn btn-lg btn-primary seguridad-btn">
+            Jugar!
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+ <footer>
+  <p>&copy; 2025 DesignLAB. Todos los derechos reservados.</p>
+  <div class="mt-2">
+    <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram" class="footer-social-link">
+      <img src="/img/insta.png" alt="Instagram" width="28" height="28" class="footer-social-icon">
+    </a>
+    <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook" class="footer-social-link">
+      <img src="/img/facebook.png" alt="Facebook" width="28" height="28" class="footer-social-icon">
+    </a>
+    <a href="https://www.youtube.com/" target="_blank" rel="noopener" aria-label="YouTube" class="footer-social-link">
+      <img src="/img/youtube.png" alt="YouTube" width="28" height="28" class="footer-social-icon">
+    </a>
+    <a href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn" class="footer-social-link">
+      <img src="/img/linkedin.png" alt="YouTube" width="28" height="28" class="footer-social-icon">
+    </a>
+  </div>
+</footer>
+
+
+  <script>
+    // Quiz de selección múltiple
+    document.getElementById('quizForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      let score = 0;
+      if (document.querySelector('input[name="q1"]:checked')?.value === "PLA") score++;
+      if (document.querySelector('input[name="q2"]:checked')?.value === "Slicer") score++;
+      if (document.querySelector('input[name="q3"]:checked')?.value === "STL") score++;
+
+      let result = "";
+      if (score === 3) {
+        result = "<span style='color:var(--color-secondary);font-weight:bold;'>¡Excelente! Todas las respuestas son correctas 🎉</span>";
+      } else if (score === 2) {
+        result = "<span style='color:var(--color-primary);font-weight:bold;'>¡Muy bien! Solo te faltó una respuesta.</span>";
+      } else {
+        result = "<span style='color:var(--color-accent);font-weight:bold;'>Repasa los contenidos y volvé a intentarlo.</span>";
+      }
+      document.getElementById('quizResult').innerHTML = result;
+    });
+
+    // Arrastrar y soltar
+    let dragged;
+    document.getElementById('material-pla').addEventListener('dragstart', function(e) {
+      dragged = 'PLA';
+    });
+    document.getElementById('material-resina').addEventListener('dragstart', function(e) {
+      dragged = 'Resina';
+    });
+
+    function dropMaterial(event, tipo) {
+      event.preventDefault();
+      let result = '';
+      if (dragged === tipo) {
+        result = `<span style="color:var(--color-secondary);font-weight:bold;">¡Correcto! ${dragged} es para impresora ${tipo === 'PLA' ? 'FDM' : 'SLA'}.</span>`;
+        document.getElementById(tipo === 'PLA' ? 'fdm-drop' : 'sla-drop').innerText = dragged;
+      } else {
+        result = `<span style="color:var(--color-primary);font-weight:bold;">Incorrecto. Intenta de nuevo.</span>`;
+      }
+      document.getElementById('dragResult').innerHTML = result;
+    }
+
+    // Verdadero o falso
+    document.getElementById('vfForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const vf1 = this.vf1.value;
+      const vf2 = this.vf2.value;
+      let score = 0;
+      if (vf1 === "verdadero") score++;
+      if (vf2 === "falso") score++;
+      let result = "";
+      if (score === 2) {
+        result = "<span style='color:var(--color-secondary);font-weight:bold;'>¡Perfecto! Ambas respuestas son correctas.</span>";
+      } else {
+        result = "<span style='color:var(--color-primary);font-weight:bold;'>Revisa tus respuestas y vuelve a intentarlo.</span>";
+      }
+      document.getElementById('vfResult').innerHTML = result;
+    });
+  </script>
+</body>
+</html>

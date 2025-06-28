@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contenidos - DesignLAB</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- LightGallery -->
+  <link href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/css/lightgallery-bundle.min.css" rel="stylesheet">
+
+  <!-- Estilos personalizados -->
+  <link rel="stylesheet" href="/css/styles.css" />
+
+</head>
+<body>
+
+  <header>
+    <h1>Contenidos</h1>
+    <p>Explorá recursos de diseño e impresión 3D</p>
+  </header>
+
+  <nav class="sticky-nav" aria-label="Navegación principal">
+    <ul class="nav justify-content-center">
+      <li class="nav-item"><a class="nav-link" href="/index.html">Inicio</a></li>
+      <li class="nav-item"><a class="nav-link active" href="contenidos.html" aria-current="page">Contenidos</a></li>
+      <li class="nav-item"><a class="nav-link" href="actividades.html">Actividades</a></li>
+      <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <main class="container py-4">
+    <div class="row g-4 justify-content-center">
+      <div class="col-12 col-md-8 col-lg-7">
+        <div class="card h-100 shadow-sm contenidos-card">
+          <div class="card-body">
+            <h2 class="card-title h5">Temas principales</h2>
+            <ul>
+              <li>¿Qué es la impresión 3D?</li>
+              <li>Tipos de impresoras y materiales</li>
+              <li>Introducción al diseño CAD</li>
+              <li>Proceso de slicing y preparación para impresión</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-8 col-lg-7">
+        <div class="card h-100 shadow-sm contenidos-card">
+          <div class="card-body">
+            <h3 class="card-title h5">Material descargable</h3>
+            <ul>
+              <li><a href="/docs/guia impresion 3d.pdf" target="_blank">Guía para impresión 3D (PDF)</a></li>
+              <li><a href="/docs/diseño parametrico.pdf" target="_blank">Diseño paramétrico (PDF)</a></li>
+              <li><a href="/docs/impresoras 3D.pdf" target="_blank">Tipos de impresoras 3D (PDF)</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-8 col-lg-7">
+        <div class="card h-100 shadow-sm contenidos-card">
+          <div class="card-body">
+            <h3 class="card-title h5">Galería de diseños 3D</h3>
+            <p>Hacé clic sobre las imágenes para ampliarlas:</p>
+            <div id="lightgallery" class="d-flex flex-wrap gap-3 justify-content-center galeria-ancha">
+              <a href="/img/disenador-usando-una-impresora-3d.jpg">
+                <img src="/img/disenador-usando-una-impresora-3d.jpg" width="120" alt="Diseño 1" class="galeria"/>
+              </a>
+              <a href="/img/disenadores-que-usan-una-impresora-3d.jpg">
+                <img src="/img/disenadores-que-usan-una-impresora-3d.jpg" width="120" alt="Diseño 1" class="galeria"/>
+              </a>
+              <a href="/img/el-estilo-de-vida-del-disenador-usando-una-impresora-3d (3).jpg">
+                <img src="/img/el-estilo-de-vida-del-disenador-usando-una-impresora-3d (3).jpg" width="120" alt="Diseño 2" class="galeria"/>
+              </a>
+              <a href="/img/freepik__the-style-is-candid-image-photography-with-natural__54615.jpeg">
+                <img src="/img/el-estilo-de-vida-del-disenador-usando-una-impresora-3d.jpg" width="120" alt="Diseño 3" class="galeria"/>
+              </a>
+              <a href="/img/freepik__the-style-is-candid-image-photography-with-natural__54615.jpeg">
+                <img src="/img/freepik__the-style-is-candid-image-photography-with-natural__54615.jpeg" width="120" alt="Diseño 3" class="galeria"/>
+              </a>
+              <a href="/img/freepik__the-style-is-candid-image-photography-with-natural__54617.jpeg">
+                <img src="/img/freepik__the-style-is-candid-image-photography-with-natural__54617.jpeg" width="120" alt="Diseño 3" class="galeria"/>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-8 col-lg-7">
+        <div class="card h-100 shadow-sm contenidos-card">
+          <div class="card-body">
+            <h3 class="card-title h5">Video: Consejos y tips sobre impresión 3D</h3>
+            <div class="ratio ratio-16x9 mb-3">
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/qiYNsbXgvXQ?si=KTk8g1kcmCwc6AQx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <p>Descubrí los conceptos básicos de la impresión 3D en este video introductorio.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+  <p>&copy; 2025 DesignLAB. Todos los derechos reservados.</p>
+  <div class="mt-2">
+    <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram" class="footer-social-link">
+      <img src="/img/insta.png" alt="Instagram" width="28" height="28" class="footer-social-icon">
+    </a>
+    <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook" class="footer-social-link">
+      <img src="/img/facebook.png" alt="Facebook" width="28" height="28" class="footer-social-icon">
+    </a>
+    <a href="https://www.youtube.com/" target="_blank" rel="noopener" aria-label="YouTube" class="footer-social-link">
+      <img src="/img/youtube.png" alt="YouTube" width="28" height="28" class="footer-social-icon">
+    </a>
+    <a href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn" class="footer-social-link">
+      <img src="/img/linkedin.png" alt="YouTube" width="28" height="28" class="footer-social-icon">
+    </a>
+  </div>
+</footer>
+
+
+  <!-- Bootstrap y LightGallery -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/lightgallery.min.js"></script>
+
+  <!-- Inicializar LightGallery -->
+  <script>
+    lightGallery(document.getElementById('lightgallery'));
+  </script>
+
+  <script src="/js/script.js"></script>
+</body>
+</html>
