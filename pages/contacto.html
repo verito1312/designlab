@@ -10,6 +10,8 @@
 
   <!-- Estilos personalizados -->
      <link rel="stylesheet" href="/designlab/css/styles.css" />
+       <link rel="stylesheet" href="/css/styles.css" />
+
 
   <!-- Script de validación -->
   <script>
@@ -40,13 +42,29 @@
     <p>Escribinos para más información o dudas</p>
   </header>
 
-  <nav class="sticky-nav" aria-label="Navegación principal">
-    <ul class="nav justify-content-center">
-      <li class="nav-item"><a class="nav-link" href="/index.html">Inicio</a></li>
-      <li class="nav-item"><a class="nav-link" href="contenidos.html">Contenidos</a></li>
-      <li class="nav-item"><a class="nav-link" href="actividades.html">Actividades</a></li>
-      <li class="nav-item"><a class="nav-link active" href="contacto.html" aria-current="page">Contacto</a></li>
-    </ul>
+  <nav class="navbar navbar-expand-lg sticky-nav bg-dark" aria-label="Navegación principal">
+    <div class="container">
+      <a class="navbar-brand text-white fw-bold" href="#">DesignLAB</a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Abrir menú">
+        <span class="navbar-toggler-icon invert-navbar-toggler"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-center" id="mainNavbar">
+        <ul class="navbar-nav mb-2 mb-lg-0 gap-2">
+          <li class="nav-item">
+            <a class="nav-link btn btn-primary text-white px-4 fw-bold" href="/index.html" aria-current="page">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link btn btn-outline-primary text-white px-4 fw-bold" href="contenidos.html">Contenidos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link btn btn-outline-primary text-white px-4 fw-bold" href="actividades.html">Actividades</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link btn btn-outline-primary text-white px-4 fw-bold" href="contacto.html">Contacto</a>
+          </li>
+        </ul>
+      </div>
+    </div>
   </nav>
 
   <main class="container py-4">
@@ -97,7 +115,7 @@
         <div class="card h-100 shadow-sm contenidos-card mapa-card">
          <div class="card-body">
             <h5 class="card-title">Mapa del sitio</h5>
-            <p>Av. Gral. Rivera 2967, Montevideo, Uruguay</p>
+            <p>20 de Setiembre 1536, Montevideo, Uruguay</p>
             <div style="width:100%;height:250px;">
               <iframe 
                 src="https://www.openstreetmap.org/export/embed.html?bbox=-56.164532661437996%2C-34.901112%2C-56.160532661437996%2C-34.899112&amp;layer=mapnik&amp;marker=-34.900112%2C-56.162532661438"

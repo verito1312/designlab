@@ -10,6 +10,8 @@
 
   <!-- Estilos personalizados -->
   <link rel="stylesheet" href="/designlab/css/styles.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
+
 </head>
 <body>
 
@@ -18,13 +20,29 @@
     <p>Probá tus conocimientos sobre impresión 3D</p>
   </header>
 
-  <nav class="sticky-nav" aria-label="Navegación principal">
-    <ul class="nav justify-content-center">
-      <li class="nav-item"><a class="nav-link" href="/index.html">Inicio</a></li>
-      <li class="nav-item"><a class="nav-link" href="contenidos.html">Contenidos</a></li>
-      <li class="nav-item"><a class="nav-link active" href="actividades.html" aria-current="page">Actividades</a></li>
-      <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
-    </ul>
+  <nav class="navbar navbar-expand-lg sticky-nav bg-dark" aria-label="Navegación principal">
+    <div class="container">
+      <a class="navbar-brand text-white fw-bold" href="#">DesignLAB</a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Abrir menú">
+        <span class="navbar-toggler-icon custom-navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-center" id="mainNavbar">
+        <ul class="navbar-nav mb-2 mb-lg-0 gap-2">
+          <li class="nav-item">
+            <a class="nav-link btn btn-primary text-white px-4 fw-bold" href="/index.html" aria-current="page">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link btn btn-outline-primary text-white px-4 fw-bold" href="contenidos.html">Contenidos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link btn btn-outline-primary text-white px-4 fw-bold" href="actividades.html">Actividades</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link btn btn-outline-primary text-white px-4 fw-bold" href="contacto.html">Contacto</a>
+          </li>
+        </ul>
+      </div>
+    </div>
   </nav>
 
   <main class="container py-4">

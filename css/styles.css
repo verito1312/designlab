@@ -22,6 +22,8 @@ body {
   color: var(--color-text);
   line-height: 1.7;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 a {
@@ -123,6 +125,7 @@ main.container {
   padding: 2rem 1.5rem;
   border-radius: 24px;
   box-shadow: 0 4px 32px rgba(34,34,59,0.10);
+  flex: 1 0 auto;
 }
 
 ul, ol {
@@ -172,14 +175,32 @@ textarea::placeholder {
   opacity: 1;
 }
 
+/* Footer ocupa todo el ancho y se fija abajo si hay poco contenido */
 footer {
-  font-size: 0.95rem;
-  color: var(--color-light);
+  width: 100%;
+  background: var(--color-nav-bg, #23223a);
+  color: var(--color-light, #fff);
   text-align: center;
-  margin-top: 3rem;
   padding: 1.2rem 0 0.5rem 0;
-  background: var(--color-nav-bg);
-  border-top: 1px solid var(--color-muted);
+  border-top: 1px solid var(--color-muted, #444);
+  position: relative;
+  left: 0;
+  bottom: 0;
+  z-index: 10;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main.container {
+  flex: 1 0 auto;
 }
 
 /* --- CONTENIDOS (CARDS Y GALERÍA) --- */
@@ -309,10 +330,15 @@ footer {
 
 /* Contenido de tarjetas */
 .contenidos-card {
-  max-width: 700%;
   width: 100%;
-  margin-left: 0;
-  margin-right: 0;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
 }
 
 .contenidos-card li {
@@ -429,4 +455,13 @@ li {
 .draggable-material {
   background: var(--color-accent) !important;
   color: #fff !important;
+}
+
+.logo-dlab {
+  max-width: 300px;
+  width: 200%;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }

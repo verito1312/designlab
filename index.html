@@ -17,48 +17,63 @@
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
-  <header>
-    <h1>DesignLAB</h1>
-    <p>Explorá el mundo de la impresión 3D</p>
+  <header class="text-center py-3">
+    <img src="img/logo DLAB (2).png" alt="Logo DesignLAB" class="mb-2 logo-dlab">
+    <h1 class="mt-2">Explorá el mundo de la impresión 3D</h1>
+    <p>Un espacio para aprender y compartir sobre diseño digital e impresión 3D</p>
   </header>
 
-  <nav class="sticky-nav" aria-label="Navegación principal">
-    <ul class="nav justify-content-center">
-      <li class="nav-item">
-        <a class="nav-link active" href="index.html" aria-current="page" tabindex="0">Inicio</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="pages/contenidos.html" tabindex="0">Contenidos</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="pages/actividades.html" tabindex="0">Actividades</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="pages/contacto.html" tabindex="0">Contacto</a>
-      </li>
-    </ul>
+  <nav class="navbar navbar-expand-lg sticky-nav bg-dark" aria-label="Navegación principal">
+    <div class="container">
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Abrir menú">
+        <span class="navbar-toggler-icon invert-navbar-toggler"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-center" id="mainNavbar">
+        <ul class="navbar-nav mb-2 mb-lg-0 gap-2">
+          <li class="nav-item">
+            <a class="nav-link btn btn-primary text-white px-4 fw-bold" href="index.html" aria-current="page">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link btn btn-outline-primary text-white px-4 fw-bold" href="pages/contenidos.html">Contenidos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link btn btn-outline-primary text-white px-4 fw-bold" href="pages/actividades.html">Actividades</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link btn btn-outline-primary text-white px-4 fw-bold" href="pages/contacto.html">Contacto</a>
+          </li>
+        </ul>
+      </div>
+    </div>
   </nav>
 
   <main class="container py-4">
+    <!-- Presentación y bienvenida -->
     <section class="mb-5 text-center index-card">
       <h2>Bienvenido a DesignLAB</h2>
-      <p>Aprendé diseño, impresión y prototipado en 3D con recursos interactivos y descargables.</p>
-      <img src="img/impresora3d.png" alt="Impresora 3D" class="img-impresion-3d">
+      <p>
+        <strong>DesignLAB</strong> es una iniciativa educativa que promueve el aprendizaje activo y visual sobre <b>impresión 3D</b> y <b>diseño digital</b>. 
+        Nuestro objetivo es inspirar y acompañar a quienes se inician en el mundo del diseño, ofreciendo contenidos útiles, prácticos y visualmente atractivos.
+      </p>
+      <img src="img/impresora3d.png" alt="Impresora 3D" class="img-impresion-3d mb-3">
+      <div class="ratio ratio-16x9 mb-3 video-container">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/YvMU1FWVdU8?si=GtYAWwKsoYhEvLuo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <p>
+        <em>Descubrí los conceptos básicos de la impresión 3D en este video introductorio.</em>
+      </p>
     </section>
 
-
+    <!-- Sobre Nosotros y valores -->
     <section class="mt-5 index-card">
       <h2>Sobre Nosotros</h2>
       <p>
-        En DesignLAB, nuestro objetivo es acercar la tecnología de impresión 3D
-        a estudiantes, docentes y entusiastas, facilitando el aprendizaje con recursos
-        prácticos y actualizados.
+        En DesignLAB, acercamos la tecnología de impresión 3D a estudiantes, docentes y entusiastas, facilitando el aprendizaje con recursos prácticos y actualizados.
       </p>
-      <ul>
-        <li>Accesibilidad y aprendizaje para todos</li>
-        <li>Innovación y actualización constante</li>
-        <li>Colaboración y comunidad</li>
-        <li>Compromiso con la calidad educativa</li>
+      <ul class="text-start mx-auto ul-max-width">
+        <li>🎨 Creatividad como herramienta de transformación</li>
+        <li>🤝 Trabajo colaborativo y comunidad</li>
+        <li>📚 Educación accesible e inclusiva</li>
+        <li>🔍 Curiosidad, experimentación y pensamiento crítico</li>
       </ul>
       <p>
         Si querés saber más o colaborar, no dudes en escribirnos.
@@ -68,8 +83,20 @@
         </a>
       </p>
     </section>
-      
-    
+
+    <!-- Formulario de suscripción (ejemplo de formulario para recopilar info) -->
+    <section class="mt-5 index-card">
+      <h2>Suscribite a nuestras novedades</h2>
+      <form class="row g-3 justify-content-center" id="suscripcionForm">
+        <div class="col-md-4">
+          <input type="email" class="form-control" id="suscripcionEmail" placeholder="Tu email" required>
+        </div>
+        <div class="col-md-2">
+          <button type="submit" class="btn btn-success w-100">Suscribirme</button>
+        </div>
+      </form>
+      <div id="suscripcionMensaje" class="mt-2"></div>
+    </section>
   </main>
 
   <footer>
@@ -114,6 +141,21 @@
             zoom: true
           });
         }   
+    });
+  </script>
+  <script>
+    // Formulario de suscripción simple
+    document.addEventListener('DOMContentLoaded', function() {
+      const form = document.getElementById('suscripcionForm');
+      if(form) {
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          const email = document.getElementById('suscripcionEmail').value;
+          document.getElementById('suscripcionMensaje').innerHTML =
+            '<span class="text-success">¡Gracias por suscribirte, pronto recibirás novedades!</span>';
+          form.reset();
+        });
+      }
     });
   </script>
 </body>
