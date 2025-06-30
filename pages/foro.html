@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Foro - DesignLAB</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/css/lightgallery-bundle.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css" />
+  <link rel="stylesheet" href="/designlab/css/styles.css" />
+</head>
+<body>
+  <header class="text-center py-3">
+    <h1 class="mt-2">Foro DesignLAB</h1>
+    <p>Participá, preguntá y compartí tus experiencias sobre impresión 3D y diseño digital</p>
+  </header>
+
+  <nav class="navbar navbar-expand-lg sticky-nav bg-dark" aria-label="Navegación principal">
+    <div class="container">
+      <a class="navbar-brand text-white fw-bold" href="../index.html">DesignLAB</a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Abrir menú">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-center" id="mainNavbar">
+        <ul class="navbar-nav mb-2 mb-lg-0 gap-2">
+          <li class="nav-item">
+            <a class="nav-link btn btn-outline-primary text-white px-4 fw-bold" href="../index.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link btn btn-outline-primary text-white px-4 fw-bold" href="contenidos.html">Contenidos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link btn btn-outline-primary text-white px-4 fw-bold" href="actividades.html">Actividades</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link btn btn-foro px-4 fw-bold" href="foro.html">Foro</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link btn btn-outline-primary text-white px-4 fw-bold" href="contacto.html">Contacto</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link btn btn-outline-light text-white px-4 fw-bold" href="login.html">Iniciar sesión</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container py-4">
+    <section class="mb-5 index-card">
+      <h2>Nuevo tema</h2>
+      <form id="foroForm" class="formulario-unificado">
+        <div class="mb-3">
+          <label for="nombreUsuario" class="form-label" style="color:#fff;">Tu nombre</label>
+          <input type="text" class="form-control" id="nombreUsuario" placeholder="Tu nombre" required>
+        </div>
+        <div class="mb-3">
+          <label for="tituloTema" class="form-label" style="color:#fff;">Título del tema</label>
+          <input type="text" class="form-control" id="tituloTema" placeholder="Título del tema" required>
+        </div>
+        <div class="mb-3">
+          <label for="mensajeTema" class="form-label" style="color:#fff;">Mensaje</label>
+          <textarea class="form-control" id="mensajeTema" rows="3" placeholder="Escribí tu mensaje aquí..." required></textarea>
+        </div>
+        <button type="submit" class="btn btn-success">Publicar</button>
+      </form>
+      <div id="foroMensaje" class="mt-2"></div>
+    </section>
+
+    <section class="index-card">
+      <h2>Temas recientes</h2>
+      <ul class="list-group" id="listaForo">
+        <!-- Los temas del foro aparecerán aquí -->
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 DesignLAB. Todos los derechos reservados.</p>
+    <div class="mt-2">
+      <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram" class="footer-social-link">
+        <img src="../img/insta.png" alt="Instagram" width="28" height="28" class="footer-social-icon">
+      </a>
+      <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook" class="footer-social-link">
+        <img src="../img/facebook.png" alt="Facebook" width="28" height="28" class="footer-social-icon">
+      </a>
+      <a href="https://www.youtube.com/" target="_blank" rel="noopener" aria-label="YouTube" class="footer-social-link">
+        <img src="../img/youtube.png" alt="YouTube" width="28" height="28" class="footer-social-icon">
+      </a>
+      <a href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn" class="footer-social-link">
+        <img src="../img/linkedin.png" alt="LinkedIn" width="28" height="28" class="footer-social-icon">
+      </a>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Foro simple en localStorage
+    document.addEventListener('DOMContentLoaded', function() {
+      const foroForm = document.getElementById('foroForm');
+      const listaForo = document.getElementById('listaForo');
+      const foroMensaje = document.getElementById('foroMensaje');
+
+      function mostrarTemas() {
+        listaForo.innerHTML = '';
+        const temas = JSON.parse(localStorage.getItem('temasForo') || '[]');
+        if (temas.length === 0) {
+          listaForo.innerHTML = '<li class="list-group-item text-muted">No hay temas aún. ¡Sé el primero en participar!</li>';
+        } else {
+          temas.reverse().forEach(t => {
+            const li = document.createElement('li');
+            li.className = 'list-group-item';
+            li.innerHTML = `<strong>${t.titulo}</strong> <br><span class="text-secondary">${t.nombre}</span><br>${t.mensaje}`;
+            listaForo.appendChild(li);
+          });
+        }
+      }
+
+      foroForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const nombre = document.getElementById('nombreUsuario').value.trim();
+        const titulo = document.getElementById('tituloTema').value.trim();
+        const mensaje = document.getElementById('mensajeTema').value.trim();
+
+        if (!nombre || !titulo || !mensaje) {
+          foroMensaje.innerHTML = '<span class="text-danger">Por favor, completá todos los campos.</span>';
+          return;
+        }
+
+        const temas = JSON.parse(localStorage.getItem('temasForo') || '[]');
+        temas.push({ nombre, titulo, mensaje });
+        localStorage.setItem('temasForo', JSON.stringify(temas));
+        foroMensaje.innerHTML = '<span class="text-success">¡Tema publicado!</span>';
+        foroForm.reset();
+        mostrarTemas();
+      });
+
+      mostrarTemas();
+    });
+  </script>
+</body>
+</html>

@@ -117,6 +117,15 @@ nav.sticky-nav ul.nav li.nav-item a.nav-link.active {
   color: var(--color-dark);
   transform: translateY(-2px) scale(1.05);
 }
+/* Botón INICIAR SESIÓN diferenciado */
+.navbar-nav .nav-link.btn-login {
+  background: transparent;
+  border: 2px solid #fff;
+  color: #fff !important;
+  border-radius: 20px;
+  font-weight: 600;
+  transition: background 0.2s, color 0.2s;
+}
 
 main.container {
   max-width: 900px;
@@ -378,6 +387,170 @@ li {
   color: #4caf50 !important;
 }
 
+/* --- FORO --- */
+.index-card {
+  background: #29294d;
+  border-radius: 18px;
+  box-shadow: 0 2px 16px 0 rgba(0,0,0,0.10);
+  padding: 2rem 1.5rem;
+  margin-bottom: 2rem;
+  color: #fff;
+}
+
+#foroForm .form-control,
+#foroForm .form-select {
+  background: #23223a;
+  color: #fff;
+  border: 1px solid var(--color-secondary, #4E4C8B);
+}
+
+#foroForm .form-control:focus,
+#foroForm .form-select:focus {
+  background: #23223a;
+  color: #fff;
+  border-color: var(--color-primary, #DD697C);
+  box-shadow: 0 0 0 0.2rem rgba(221,105,124,0.15);
+}
+
+#foroForm label {
+  color: #fff;
+}
+
+#foroMensaje {
+  min-height: 1.5em;
+}
+
+.list-group-item {
+  background: #23223a;
+  color: #fff;
+  border: 1px solid #4E4C8B;
+  border-radius: 10px;
+  margin-bottom: 0.5rem;
+}
+
+.list-group-item.text-muted {
+  color: #bdbdbd !important;
+  background: transparent;
+  border: none;
+}
+
+.btn-success {
+  background: var(--color-primary, #DD697C);
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 20px;
+  transition: background 0.2s;
+}
+
+.btn-success:hover,
+.btn-success:focus {
+  background: var(--color-secondary, #4E4C8B);
+  color: #fff;
+}
+
+/* --- LOGIN --- */
+.main-login {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.main-login .index-card {
+  background: #29294d;
+  border-radius: 18px;
+  box-shadow: 0 2px 16px 0 rgba(0,0,0,0.10);
+  padding: 2rem 1.5rem;
+  color: #fff;
+}
+
+.main-login .form-control,
+.main-login .form-select {
+  background: #23223a;
+  color: #fff;
+  border: 1px solid var(--color-secondary, #4E4C8B);
+}
+
+.main-login .form-control:focus,
+.main-login .form-select:focus {
+  background: #23223a;
+  color: #fff;
+  border-color: var(--color-primary, #DD697C);
+  box-shadow: 0 0 0 0.2rem rgba(221,105,124,0.15);
+}
+
+.main-login label {
+  color: #fff;
+}
+
+.main-login .btn-primary {
+  background: var(--color-primary, #DD697C);
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 20px;
+  transition: background 0.2s;
+}
+
+.main-login .btn-primary:hover,
+.main-login .btn-primary:focus {
+  background: var(--color-secondary, #4E4C8B);
+  color: #fff;
+}
+
+/* --- Formularios unificados --- */
+.formulario-unificado {
+  background: #23223a;
+  border-radius: 18px;
+  box-shadow: 0 2px 16px 0 rgba(0,0,0,0.10);
+  padding: 2rem 1.5rem;
+  color: #fff;
+  max-width: 500px;
+  margin: 0 auto 2rem auto;
+}
+
+.formulario-unificado label {
+  color: #fff;
+  font-weight: 500;
+}
+
+.formulario-unificado .form-control,
+.formulario-unificado .form-select,
+.formulario-unificado textarea {
+  background: #181828;
+  color: #fff;
+  border: 1.5px solid var(--color-secondary, #4E4C8B);
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.formulario-unificado .form-control:focus,
+.formulario-unificado .form-select:focus,
+.formulario-unificado textarea:focus {
+  background: #181828;
+  color: #fff;
+  border-color: var(--color-primary, #DD697C);
+  box-shadow: 0 0 0 0.2rem rgba(221,105,124,0.15);
+}
+
+.formulario-unificado button,
+.formulario-unificado .btn {
+  background: var(--color-primary, #DD697C);
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 20px;
+  transition: background 0.2s;
+  margin-top: 0.5rem;
+}
+
+.formulario-unificado button:hover,
+.formulario-unificado .btn:hover,
+.formulario-unificado button:focus,
+.formulario-unificado .btn:focus {
+  background: var(--color-secondary, #4E4C8B);
+  color: #fff;
+}
+
 /* Responsive cards and gallery */
 @media (max-width: 700px) {
   .galeria {
@@ -396,6 +569,24 @@ li {
   header {
     padding: 1.2rem 0.5rem 0.7rem 0.5rem;
   }
+}
+
+.draggable-material {
+  background: var(--color-accent) !important;
+  color: #fff !important;
+}
+
+.logo-dlab {
+  max-width: 300px;
+  width: 200%;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.navbar-toggler-icon {
+  filter: invert(1) !important; 
 }
 
 /* Accesibilidad: alto contraste para usuarios que lo requieran */
@@ -442,16 +633,7 @@ li {
   }
 }
 
-.draggable-material {
-  background: var(--color-accent) !important;
-  color: #fff !important;
-}
 
-.logo-dlab {
-  max-width: 300px;
-  width: 200%;
-  height: auto;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
+
+
+
