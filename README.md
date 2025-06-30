@@ -60,26 +60,7 @@
 1. **Navega por las secciones** usando el menú superior.
 2. **Descarga materiales** desde la sección de contenidos.
 3. **Participa en actividades** para reforzar el aprendizaje.
-4. **Contacta al equipo** mediante el formulario de contacto.
-
----
-
-## Capturas de Pantalla
-
-> **Nota:** Agrega aquí tus capturas de pantalla.  
-> Puedes hacerlas con la herramienta de recortes de Windows o usando `Ctrl + Shift + S` y pegarlas en este documento o en el README de tu repositorio.
-
-- **Página principal:**  
-  ![Captura de la página principal](docs/captura-index.png)
-
-- **Galería de imágenes:**  
-  ![Galería interactiva](docs/captura-galeria.png)
-
-- **Quiz interactivo:**  
-  ![Quiz de actividades](docs/captura-quiz.png)
-
-- **Menú hamburguesa en móvil:**  
-  ![Menú móvil](docs/captura-menu-movil.png)
+4. **Contacta al equipo** mediante el formulario de contacto
 
 ---
 
